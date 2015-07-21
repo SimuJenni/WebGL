@@ -43,8 +43,10 @@ function init()
     });
 
     canvas.addEventListener("mouseup", function(event){
-	drawLine(event);
-	paint = false;
+	if(paint) {
+	    drawLine(event);
+	    paint = false;
+	}
     });
 
     canvas.addEventListener("mouseout", function(event){
